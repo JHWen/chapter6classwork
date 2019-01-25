@@ -22,25 +22,29 @@ public class DetailPlayerActivity extends GSYBaseActivityDetail<StandardGSYVideo
     private String url = "https://res.exexm.com/cw_145225549855002";
 
     private static final String URL_KEY = "video_url";
+    private static final String TITLE_KEY = "video_title";
     private static final String URL_BUNDLE = "url_bundle";
+    private String title = "demo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_detail_player);
 
+        //获取视频列表跳转到视频详情页的video url
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             Bundle bundle = extras.getBundle(URL_BUNDLE);
             if (bundle != null) {
                 url = bundle.getString(URL_KEY);
+                title = bundle.getString(TITLE_KEY);
             }
         }
 
         detailPlayer = (StandardGSYVideoPlayer) findViewById(R.id.detail_player);
         //增加title
-        detailPlayer.getTitleTextView().setVisibility(View.GONE);
-        detailPlayer.getBackButton().setVisibility(View.GONE);
+        detailPlayer.getTitleTextView().setVisibility(View.VISIBLE);
+        detailPlayer.getBackButton().setVisibility(View.VISIBLE);
 
 
         initVideoBuilderMode();
@@ -61,7 +65,7 @@ public class DetailPlayerActivity extends GSYBaseActivityDetail<StandardGSYVideo
                 .setThumbImageView(imageView)
                 .setUrl(url)
                 .setCacheWithPlay(true)
-                .setVideoTitle("")
+                .setVideoTitle(title)
                 .setIsTouchWiget(true)
                 .setRotateViewAuto(false)
                 .setLockLand(false)

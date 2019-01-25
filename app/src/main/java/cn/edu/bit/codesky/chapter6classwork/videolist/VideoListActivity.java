@@ -38,6 +38,7 @@ public class VideoListActivity extends AppCompatActivity implements VideoListAda
 
     private static final String TAG = VideoListActivity.class.getName();
     private static final String URL_KEY = "video_url";
+    private static final String TITLE_KEY = "video_title";
     private static final String URL_BUNDLE = "url_bundle";
 
     private static final String HOST = "http://10.108.10.39:8080/";
@@ -64,7 +65,7 @@ public class VideoListActivity extends AppCompatActivity implements VideoListAda
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                Log.d(TAG,"onScrollStateChanged");
+                Log.d(TAG, "onScrollStateChanged");
                 switch (newState) {
                     case RecyclerView.SCROLL_STATE_IDLE:
                         //滚动停止
@@ -86,7 +87,7 @@ public class VideoListActivity extends AppCompatActivity implements VideoListAda
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                Log.d(TAG,"onScrolled");
+                Log.d(TAG, "onScrolled");
                 firstVisibleItem = layoutManager.findFirstVisibleItemPosition();
                 lastVisibleItem = layoutManager.findLastVisibleItemPosition();
                 visibleCount = lastVisibleItem - firstVisibleItem;
@@ -180,6 +181,7 @@ public class VideoListActivity extends AppCompatActivity implements VideoListAda
         Intent intent = new Intent(VideoListActivity.this, DetailPlayerActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString(URL_KEY, feed.getVideoUrl());
+        bundle.putString(TITLE_KEY, feed.getUsername());
         intent.putExtra(URL_BUNDLE, bundle);
         startActivity(intent);
     }
