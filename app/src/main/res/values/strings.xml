@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">chapter6classwork</string>
+    <string name="detail_text">北京理工大学1940年诞生于延安，是中国共产党创办的第一所理工科大学，
+        是新中国成立以来国家历批次重点建设的高校，首批进入国家“211工程”和“985工程”，
+        首批进入“世界一流大学”建设高校A类行列。毛泽东同志亲自题写校名，李富春、徐特立、李强等
+        老一辈无产阶级革命家先后担任学校主要领导。学校现隶属于工业和信息化部，全体师生员工正对标国家“两个一百年”奋斗目标，
+        全力朝着中国特色世界一流大学的建设目标迈进</string>
+    <string name="video_list_button_name">视频列表</string>
+</resources>
