@@ -74,7 +74,7 @@ private void autoPlayVideo(RecyclerView view) {
 **最后App实现效果演示如下所示：**
 
 <p align="center">
-    <img src="./pic/video_detail.jpg" alt="Sample"  width="300" height="500">
+    <img src="./pic/demo.gif" alt="Sample"  width="300" height="500">
     <p align="center">
         <em>视频详情页</em>
     </p>
